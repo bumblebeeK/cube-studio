@@ -6,8 +6,9 @@ metadata:
   labels:
     infra-pvname: infra-mysql-pv
 spec:
+  persistentVolumeReclaimPolicy: Retain
   capacity:       
-    storage: 10Gi
+    storage: 5Gi
   accessModes:   
     - ReadWriteMany   
   hostPath:
@@ -20,11 +21,12 @@ metadata:
   name: infra-mysql-pvc
   namespace: infra
 spec:
+  persistentVolumeReclaimPolicy: Retain
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Gi
+      storage: 5Gi
   selector:
     matchLabels:
       infra-pvname: infra-mysql-pv
