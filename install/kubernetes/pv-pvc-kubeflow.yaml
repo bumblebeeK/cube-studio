@@ -9,9 +9,10 @@ metadata:
   labels:
     kubeflow-pvname: kubeflow-kubeflow-user-workspace
 spec:
+  storageClassName: local-storage
 #  storageClassName: pipeline
   capacity:
-    storage: 500Gi
+    storage: 6Gi
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -24,11 +25,12 @@ metadata:
   name: kubeflow-user-workspace
   namespace: kubeflow
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 6Gi
   selector:
     matchLabels:
       kubeflow-pvname: kubeflow-kubeflow-user-workspace

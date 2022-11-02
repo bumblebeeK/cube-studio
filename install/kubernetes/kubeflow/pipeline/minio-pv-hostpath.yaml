@@ -6,8 +6,9 @@ metadata:
   labels:
     kubeflow-pvname: kubeflow-minio-pv
 spec:
+  storageClassName: local-storage
   capacity:       
-    storage: 20Gi
+    storage: 8Gi
   accessModes:   
     - ReadWriteOnce   
   hostPath:

@@ -877,11 +877,12 @@ metadata:
   name: minio-pvc
   namespace: kubeflow
 spec:
+  storageClassName: local-storage
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 5Gi
   selector:
     matchLabels:
       kubeflow-pvname: kubeflow-minio-pv

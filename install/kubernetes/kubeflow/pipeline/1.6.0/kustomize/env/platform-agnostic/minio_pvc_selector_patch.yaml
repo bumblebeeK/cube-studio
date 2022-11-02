@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: minio-pvc
 spec:
+  storageClassName: local-storage
   selector:
     matchLabels:
       kubeflow-pvname: kubeflow-minio-pv

@@ -5,7 +5,8 @@ metadata:
   name: infra-redis-master-pv0
   labels:
     infra-pvname: infra-redis-master-pv
-spec:    
+spec:
+  storageClassName: local-storage
   capacity:       
     storage: 1Gi   
   accessModes:   
@@ -22,7 +23,8 @@ metadata:
   name: infra-redis-slave-pv0
   labels:
     infra-pvname: infra-redis-slave-pv
-spec:    
+spec:
+  storageClassName: local-storage
   capacity:       
     storage: 1Gi   
   accessModes:   
@@ -39,7 +41,8 @@ metadata:
   name: infra-redis-slave-pv1
   labels:
     infra-pvname: infra-redis-slave-pv
-spec:    
+spec:
+  storageClassName: local-storage
   capacity:       
     storage: 1Gi   
   accessModes:   

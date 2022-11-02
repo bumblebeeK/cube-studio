@@ -7,8 +7,9 @@ metadata:
   labels:
     pipeline-pvname: pipeline-kubeflow-global-pv
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 100Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -33,11 +34,12 @@ metadata:
   name: kubeflow-global-pvc
   namespace: pipeline
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 100Gi
+      storage: 5Gi
   selector:
     matchLabels:
       pipeline-pvname: pipeline-kubeflow-global-pv
@@ -52,8 +54,9 @@ metadata:
   labels:
     pipeline-pvname: pipeline-kubeflow-user-workspace
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 5Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -79,12 +82,12 @@ metadata:
   name: kubeflow-user-workspace
   namespace: pipeline
 spec:
-  storageClassName: ""
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 5Gi
   selector:
     matchLabels:
       pipeline-pvname: pipeline-kubeflow-user-workspace
@@ -98,8 +101,9 @@ metadata:
   labels:
     pipeline-pvname: pipeline-kubeflow-archives
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 5Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -125,12 +129,12 @@ metadata:
   name: kubeflow-archives
   namespace: pipeline
 spec:
-  storageClassName: ""
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 5Gi
   selector:
     matchLabels:
       pipeline-pvname: pipeline-kubeflow-archives

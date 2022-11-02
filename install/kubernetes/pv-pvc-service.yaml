@@ -7,9 +7,10 @@ metadata:
   labels:
     service-pvname: service-kubeflow-user-workspace
 spec:
+  storageClassName: local-storage
 #  storageClassName: pipeline
   capacity:
-    storage: 500Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -22,11 +23,12 @@ metadata:
   name: kubeflow-user-workspace
   namespace: service
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 5Gi
   selector:
     matchLabels:
       service-pvname: service-kubeflow-user-workspace
@@ -41,8 +43,9 @@ metadata:
   labels:
     service-pvname: service-kubeflow-archives
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 6Gi
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -55,11 +58,12 @@ metadata:
   name: kubeflow-archives
   namespace: service
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 6Gi
   selector:
     matchLabels:
       service-pvname: service-kubeflow-archives

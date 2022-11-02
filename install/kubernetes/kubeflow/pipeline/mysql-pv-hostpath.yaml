@@ -6,8 +6,8 @@ metadata:
   labels:
     kubeflow-pvname: kubeflow-mysql-pv
 spec:
-  capacity:       
-    storage: 20Gi
+  capacity:
+    storage: 4Gi
   accessModes:   
     - ReadWriteOnce   
   hostPath:

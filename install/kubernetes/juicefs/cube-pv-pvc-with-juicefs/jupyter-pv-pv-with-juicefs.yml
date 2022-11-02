@@ -8,8 +8,9 @@ metadata:
   labels:
     jupyter-pvname: jupyter-kubeflow-user-workspace
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -34,11 +35,12 @@ metadata:
   name: kubeflow-user-workspace
   namespace: jupyter
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 10Gi
   selector:
     matchLabels:
       jupyter-pvname: jupyter-kubeflow-user-workspace
@@ -53,8 +55,9 @@ metadata:
   labels:
     jupyter-pvname: jupyter-kubeflow-archives
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
@@ -79,11 +82,12 @@ metadata:
   name: kubeflow-archives
   namespace: jupyter
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 10Gi
   selector:
     matchLabels:
       jupyter-pvname: jupyter-kubeflow-archives

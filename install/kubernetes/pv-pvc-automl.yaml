@@ -9,8 +9,9 @@ metadata:
   labels:
     automl-pvname: automl-kubeflow-user-workspace
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 500Gi
+    storage: 5Gi
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -23,11 +24,12 @@ metadata:
   name: kubeflow-user-workspace
   namespace: automl
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 500Gi
+      storage: 5Gi
   selector:
     matchLabels:
       automl-pvname: automl-kubeflow-user-workspace

@@ -7,8 +7,9 @@ metadata:
   labels:
     infra-pvname: infra-kubeflow-global-pv
 spec:
+  storageClassName: local-storage
   capacity:
-    storage: 100Gi
+    storage: 6Gi
   accessModes:
     - ReadWriteMany
   hostPath:
@@ -21,11 +22,12 @@ metadata:
   name: kubeflow-global-pvc
   namespace: infra
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 100Gi
+      storage: 6Gi
   selector:
     matchLabels:
       infra-pvname: infra-kubeflow-global-pv
@@ -39,6 +41,7 @@ metadata:
   labels:
     infra-pvname: infra-kubeflow
 spec:
+  storageClassName: local-storage
   capacity:
     storage: 1Gi
   accessModes:
@@ -53,6 +56,7 @@ metadata:
   name: infra-kubeflow
   namespace: infra
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteMany
   resources:

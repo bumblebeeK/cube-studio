@@ -3,8 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: metadata-mysql
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 3Gi

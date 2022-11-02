@@ -21,8 +21,9 @@ metadata:
   labels:
     monitoring-pvname: monitoring-prometheus-pv
 spec:     # 定义pv属性
+  storageClassName: local-storage
   capacity:         # 容量
-    storage: 10Gi   # 存储容量
+    storage: 3Gi   # 存储容量
   accessModes:    # 访问模式
     - ReadWriteOnce
   hostPath:
